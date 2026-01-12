@@ -1,0 +1,764 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>IWS-W2026</title>
+    <meta name="description" content="IWS-W2026 - Internal Waves Service - Workshop 2026">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="IWS-W2026">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="https://aircentre.github.io/IWS-W2026/">
+    <meta property="og:image" content="img/AIR_IWS_FINAL_WORKSHOP2.png">
+
+    <link rel="icon" type="image/png" href="img/AIR_IWS_FINAL_WORKSHOP2_compressed.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="img/AIR_IWS_FINAL.svg" />
+    <link rel="shortcut icon" href="img/AIR_IWS_FINAL.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="IWS-W2026" />
+    <link rel="manifest" href="img/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="bootstrap/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #ADD8E6;
+            /* azul claro */
+        }
+    </style>
+
+</head>
+</p>
+</p>
+<img src="img/AIR_IWS_FINAL_WORKSHOP2_compressed.png" alt="Internal Wave Service"
+    style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+
+</p>
+</p>
+<details open>
+    <summary>
+        Quick Facts
+    </summary>
+    <p>
+    <p>
+    </p>
+    <div id="quickfacts" class="section level2">
+        <ul>
+            <li>Date: 14 - 16 April 2026</li>
+            <li>Location: <a href="">Lisbon region, hotel TBC</a>,
+                <a href="https://www.visitlisboa.com/en">Lisbon</a>
+            </li>
+            <li>Timezone: UTC +1; GMT 0</li>
+            <li>Event Type: In person only.</li>
+            <li>Registration for attendance: by invitation only.</li>
+        </ul>
+        <hr>
+    </div>
+</details>
+
+<details open>
+    <summary>
+        Resources
+    </summary>
+    <p>
+    <div id="resources" class="section level2">
+        <ul>
+            <li>AIR Centre Internal Waves Service: <a href="https://www.aircentre.org/internal-waves-service/">Here</a>
+            </li>
+            <li>IWS-W2025 <a href="https://aircentre.github.io/IWS-W2025/">Here</a></li>
+        </ul>
+        <hr>
+    </div>
+</details>
+
+<details close>
+    <summary>
+        Context
+    </summary>
+    <p>
+    <div id="context" class="section level2">
+        <p>Oceanic internal waves (IWs) propagate within the ocean when it is stratified and disturbed by physical
+            mechanisms.
+            These waves, typically nonlinear (Internal Solitary Waves – ISWs), can reach amplitudes of over 100 meters.
+            They
+            generate the highest vertical velocities in the ocean and strong horizontal shear currents, often causing
+            underwater
+            navigation accidents and damaging sea platforms (Osborne and Burch 1980). Furthermore, ISWs resuspend
+            sediments over
+            the continental shelf (Quaresma et al. 2007) and can produce intense mixing in the deep ocean. IWs can be
+            detected by
+            remote sensing satellites through variations in sea surface roughness, observable with optical and radar
+            sensors
+            (Magalhaes and da Silva 2017; Zhang et al. 2020; Santos-Ferreira et al. 2018, 2019, 2022, 2023). However,
+            the most
+            effective method for observing IWs across the global ocean is using SAR imaging, as the Sentinel-1 images
+            used in this
+            service (due e.g. to the cloud contamination in case of the optical images). </p>
+        </p>
+        The “Internal Waves Service” provides near real-time updates by mapping detected events on an interactive
+        platform,
+        highlighting locations where internal waves are observed. Leveraging a pre-trained model on similar datasets,
+        the service
+        analyses thousands of images from the Sentinel-1 satellite (WV mode vignettes). This innovative service
+        generates
+        global maps, offering valuable insights into the distribution of internal waves worldwide,
+        except in regions where such imagery is unavailable.</p>
+        <p></p>
+</details>
+<details close>
+    <summary>
+        About Internal Waves Service
+    </summary>
+    <p>
+        </div>
+    <div id="About Internal Waves Service" class="section level2">
+        <p>This service sources all Copernicus Sentinel 1 WV mode vignettes SAR (Synthetic Aperture RADAR) images
+            (imagettes) and classifies them according to wether or not they depict an internal wave. It proceeds to
+            store the positive images on S3 and their metadata on SQL a database for efficient retrieval.</p>
+        <ul>
+            <li>Data Acquisition and Processing:</li>
+            </p>
+            The system continuously ingests Sentinel-1 WV mode vignettes from global acquisitions. The images were
+            sourced from <a href="https://xwaves.ifremer.fr/#/">IFREMER X-Waves</a>.</p>
+            <li>Machine Learning Classification:</li>
+            </p>
+            Employs a state-of-the-art machine learning model to classify each vignette, determining the presence or
+            absence of internal waves. The model is trained on a diverse dataset of imagettes of different oceans
+            featuring
+            various oceanic conditions.</p>
+            <li>Data Management:</li>
+            </p>
+            Positive detections: Vignettes classified as containing internal waves are stored in S3 object storage for
+            efficient retrieval and further analysis.
+            Comprehensive metadata for all processed vignettes, including classification results, acquisition details,
+            and geolocation information, is stored in a SQL database.</p>
+            <li>Key Features:</li>
+            </p>
+            The system provides global coverage by analyzing Sentinel-1 WV mode data from all ocean basins worldwide. It
+            supports near real-time processing by rapidly ingesting and
+            processing new acquisitions to maintain an up-to-date dataset. Efficient retrieval is ensured through an
+            optimized database schema and object storage integration, enabling
+            quick access to classified imagery and associated metadata. Designed for scalability, the system handles the
+            high volume of Sentinel-1 WV mode acquisitions, which can reach
+            up to 75 minutes per orbit, with the potential to incorporate data from other satellites in the future.</p>
+            </p>This service provides researchers and oceanographers with a powerful tool for studying internal wave
+            phenomena on a global scale, leveraging the unique capabilities of
+            Sentinel-1’s Wave mode acquisitions.</p>
+        </ul>
+
+        </p>
+</details>
+<details close>
+    <summary>
+        Program
+    </summary>
+    <p>
+        </div>
+    <div id="program" class="section level2">
+
+        <b>Program</b>
+
+        <div id="day-1-14.04.2026" class="section level3">
+            <h3>Day 1 - Tuesday 14.04.2026</h3>
+            <p>Timezone: UTC -1; GMT-1</p>
+            <p><b>09:00 – 9:15</b> Welcome speech and program presentation.
+                <em>Mr. João Pinelo </em>
+            </p>
+            <p><b>09:15 – 9:30</b> Science-based cooperation driven towards citizens. AIR Centre presentation.
+                <em>Mr. Miguel Miranda </em>
+            </p>
+            </p>
+            <p><b>09:30 – 10:00</b> The Internal Waves Service: What we've built so far.
+                <em> Ms. Adriana Ferreira, Mr. Iúri Diogo & Mr. João Gonçalves </em>
+            </p>
+            <p><b>10:00 – 10:20</b> Coffe Break.
+            </p>
+            <p><b>10:20 – 10:50</b> Internal Solitary-like Waves within the Pacific cold tongue: generation mechanisms,
+                longevity and wider significance.
+                <em> Mr. José da Silva </em>
+            </p>
+            <p><b>10:50 – 11:20</b> SAR future mission for oceanography.
+                <em> Mr. Bertrand Chapron</em>
+            </p>
+            <p><b>11:20 – 11:50</b> Advances in the theory and methodology of SAR Oceanography.
+                <em> Mr. Johnny Johannessen</em>
+            </p>
+            <p><b>12:00 – 13:00</b> Lunch break.</p>
+            </p>
+            <p><b>13:00 – 13:15</b> Automatic identification of Internal Waves. Kaggle competition.
+                <em> Mr. Gilberto Titericz </em>
+            </p>
+            <p><b>13:15 – 13:45</b> Energetics of (super) tidal baroclinic modes in a realistically forced global ocean
+                simulation.
+                <em> Mr. Maarten Buijsman</em>
+            </p>
+            <p><b>13:45 – 14:15</b> Internal Solitary Waves and the possibility of combined mixing with Wind-induced
+                surface mixed layer.
+                <em> Mr. Jorge Magalhães</em>
+            </p>
+            <p><b>14:15 – 14:45</b> SeaSTAR and SWOT missions to observe fine-scale ocean surface dynamics.
+                <em> Ms. Christine Gommenginger</em>
+            </p>
+            <p><b>14:45 – 15:15</b> Small-scale coastal surface convergences: accumulation of larvae and other
+                zooplankton.
+                <em> Mr. Jesús Pineda</em>
+            </p>
+            <p><b>15:15 – 15:35</b> Coffe Break.
+            </p>
+            <p><b>15:35 – 16:05</b> Variance due to internal waves in global observations and models.
+                <em> Mr. Gaël Forget</em>
+            </p>
+            <p><b>16:05 – 16:35</b> Progress toward a deep learning-based submesoscale eddy detection service on NASA
+                PO.DAAC.
+                <em> Mr. Edwin Goh</em>
+            </p>
+            <p><b>16:35 – 17:00</b> Reflections on the day.
+            </p>
+            <p><b>18:00 – 20:00</b>
+                <em> Networking Cocktail.</em>
+            </p>
+            <hr />
+        </div>
+        <div id="day-2-15.04.2026" class="section level3">
+            <h3>Day 2 - Wednesday 15.04.2026</h3>
+            <p>Timezone: UTC -1; GMT-1</p>
+            <p><b>09:00 – 12:00</b> Round Table: Defining Objectives, Dataset Validation, Publications and Funding
+                Opportunities.
+            </p>
+            <p><b>12:00 – 13:00</b> Lunch break.</p>
+            </p>
+            <hr />
+        </div>
+
+        <div id="day-3-16.04.2026" class="section level3">
+            <h3>Day 2 - Thursday 16.04.2026</h3>
+            <p>Timezone: UTC -1; GMT-1</p>
+            <p><b>09:00 – 12:00</b> Round Table: Defining Objectives, Dataset Validation, Publications and Funding
+                Opportunities.
+            </p>
+            <p><b>12:00 – 13:00</b> Lunch break.</p>
+            </p>
+            <hr />
+        </div>
+
+</details>
+<details close>
+    <summary>
+        Speakers
+    </summary>
+    <p>
+        </div>
+        </div>
+    <div id="speakers-bio" class="section level2">
+        <p>A limited number of expert scientists and key stakeholders have been invited to participate in the Internal
+            Waves
+            Service Workshop. The selected speakers represent the ocean submesoscale and internal waves community,
+            spanning
+            various fields such as mathematics, modeling, and remote sensing. All of them are experts in this ocean
+            phenomenon,
+            and their knowledge across these diverse areas will be invaluable in enhancing this service.
+            Additionally, a small group of scientists from the AIR Centre, or those associated with its activities, will
+            also
+            take part in the workshop.</p>
+        <br>
+        <h3>Confirmed Speakers (alphabetically) </h3>
+    </div>
+
+    <div id="adriana-ferreira" class="section level2">
+        <h2>Adriana Ferreira</h2>
+        <img src="img/AdrianaFerreira.jpeg" alt="Adriana Ferreira" style="height:150px;">
+        <p>Adriana Ferreira recently joined the AIR Centre as a Marine Applications Developer, following the completion
+            of her PhD in Surveying Engineering at the Faculty of Sciences, University of Porto.
+            Her work has primarily focused on ocean applications, with particular expertise in submesoscale processes,
+            such as short-period internal waves. Adriana’s research combines satellite observations, in situ data,
+            oceanographic models, and, more recently, machine learning techniques to advance understanding in this
+            field.
+        </p>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/adriana-m-santos-ferreira-17ab8a258/">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=oLKjSFAAAAAJ&hl=en">Google Scholar</a></li>
+            <li><a href="https://orcid.org/0000-0002-5704-6021">ORCID</a></li>
+        </ul>
+    </div>
+    <div id="bertrand-chapron" class="section level2">
+        <h2>Bertrand Chapron</h2>
+        <img src="img/Bertrand_chapron.jpg" alt="Bertrand Chapron" style="height:150px;">
+        <p>Bertrand Chapron (Ifremer/LOPS, Odyssey group) Senior scientist, first class research director, at
+            Ifremer, has multi-year experience on the combined use of space-borne ocean remote sensing
+            active and passive measurements.
+            Chapron served as co- and/or principal investigator in several ESA projects (SMOS salinity
+            mission, OceanGasFlux, SMOS-Storm, GlobCurrent, DTEp, MAXSS). He is a member of the
+            NASA and CNES science and definition team for the future SWOT high-resolution ocean
+            topography mission (launch 2022), and CFOSAT ocean wave and wind measurements (launch
+            Oct. 2018). Over the last years, Chapron and collaborators further works on the definition of future
+            space-borne instruments, more directly dedicated to estimate ocean surface currents and/or upper
+            ocean deformation field (surface current gradients): the ESA Earth Explorer 9 Doppler off-nadir
+            altimeter SKIM (Ardhuin et al., 2018), the ESA Earth Explorer 10 bi-static SAR measurements
+            HRMNY (Dekker-Lopez et al., 2018). Other concepts include multi-azimuth optical sensor
+            GLISTERO-SARONG and multi-azimuth multi-polarized radar sensor (SEASTAR,
+            Gommenginger and Chapron, 2018), and NASA Ka-band Doppler- scatterometer (Rodriguez et
+            al., 2018).
+        </p>
+        <ul>
+            <li><a href="https://annuaire.ifremer.fr/cv/15870/">Website</a></li>
+            <li><a href="https://orcid.org/0000-0001-6088-8775">ORCID</a></li>
+        </ul>
+    </div>
+
+    </div>
+    <div id="christine-gommenginger" class="section level2">
+        <h2>Christine Gommenginger</h2>
+        <img src="img/Christine_Gommenginger.jpg" alt="Christine Gommenginger" style="height:150px;">
+        <p>Christine has over 25 years experience in ocean remote sensing and physical oceanography.
+            Her research explores how microwave electromagnetic signals interact with the ocean to
+            develop new and improved satellite-based ocean measurements, products, applications, services,
+            sensors and missions. Her pioneering work led to new spaceborne observations of ocean wave period,
+            coastal sea level and wave height, ocean winds and total surface currents in the open ocean and the
+            coastal zone. She has an established international reputation in satellite altimetry, SAR
+            interferometry, GNSS-Reflectometry and L-band radiometry. Scientific interests include atmosphere-ocean
+            exchanges, current/wind/wave interactions, submesoscale dynamics and long-term variability and trends of
+            key ocean ECVs, notably sea state and sea level.
+            Christine is a promoter and proposer of innovative Earth Observation technology and new satellite missions,
+            working extensively with private stakeholders in the space sector. She frequently works also with end-users
+            in operational agencies, government and the commercial sector to support greater understanding and uptake of
+            marine Earth Observation capabilities. Christine is Principal Investigator of the SEASTAR Earth Explorer
+            mission concept, heading an international science team of 70+ scientists and engineers to deliver new
+            high-accuracy
+            wide-swath images of total ocean surface current and wind vectors at 1km resolution.
+            She is a member of the SWOT science team, PI of the CNES-approved SWOT VORTICES project, and PI of the
+            SWOT-UK
+            project funded by NERC and the UK Space Agency. Christine serves on many national and international Earth
+            Observation
+            advisory boards for the European Space Agency, the UK Space Agency and Copernicus. She currently chairs the
+            International Science Board of the National Centre for Earth Observation. She co-proposed and co-manages the
+            NERC
+            Centre for Doctoral Training for Satellite Data in Environmental Science (SENSE) in partnership with
+            Universities of
+            Leeds, Edinburgh and British Antarctic Survey.
+        </p>
+        <ul>
+            <li><a href="https://noc.ac.uk/n/Christine%20Gommenginger">Website</a></li>
+            <li><a href="https://orcid.org/0000-0002-6941-1671">ORCID</a></li>
+            <li><a href="https://scholar.google.co.uk/citations?user=aMTOUXEAAAAJ&hl=en">Google Scholar</a></li>
+        </ul>
+    </div>
+    </div>
+    <div id="Edwin-Goh" class="section level2">
+        <h2>Edwin Goh</h2>
+        <img src="img/Edwin_goh.jpeg" alt="Edwin Goh" style="height:150px;">
+        <p>Edwin Goh received the B.S., M.S., and Ph.D. degrees in aerospace engineering from Georgia Institute of
+            Technology, Atlanta,
+            GA, USA, in 2015, 2018, and 2020, respectively. He is currently a Data Scientist with the Jet Propulsion
+            Laboratory, California
+            Institute of Technology, Pasadena, CA, USA. His research focuses on the application of machine learning to
+            enable data-driven
+            design, optimization, and operation of aerospace systems. His work includes deep space network (DSN)
+            scheduling using reinforcement
+            learning, automated machine learning systems, and self-supervised computer vision for planetary and Earth
+            science. </p>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/edwin217/">LinkedIn</a></li>
+            <li><a href="https://ieeexplore.ieee.org/author/37085576296">Website</a></li>
+            <li><a href="https://orcid.org/0000-0002-8445-9358">ORCID</a></li>
+            <li><a href="https://scholar.google.com/citations?user=3mER6wkAAAAJ&hl=en">Google Scholar</a></li>
+        </ul>
+
+    </div>
+    <div id="Gael-Forget" class="section level2">
+        <h2>Gaël Forget</h2>
+        <img src="img/Gael_Forget.jpg" alt="Gaël Forget" style="height:150px;">
+        <p>Gaël works as a reseach scientist at the Massachusetts Institute of Technology (MIT) where he investigates
+            oceanography
+            and climate. As part of the Department of Earth, Atmospheric and Planetary Sciences, his work focuses on
+            ocean
+            modeling and the analysis of global ocean data sets such as Argo profile collections and satellite
+            altimetry. Amongst
+            other approaches, he carries out ocean state estimation using the MIT general circulation model to
+            interpolate and interpret
+            ocean observations. He also participates in the development of the MITgcm and in the NASA Sea Level Change
+            Team activities.
+            His scientific interests include: Ocean circulation and Climate variability; tracer transport and turbulent
+            transformation processes;
+            interaction of bio-geochemistry and physical processes; global cycles of heat, water, and carbon;
+            observational statistics; forward and inverse modeling. </p>
+        <ul>
+            <li><a href="https://www.gaelforget.net/">Website</a></li>
+            <li><a href="https://scholar.google.com/citations?user=QIWIDPMAAAAJ&hl=en">Google Scholar</a></li>
+        </ul>
+    </div>
+    <div id="gilberto-titericz " class="section level2">
+        <h2>Gilberto Titericz</h2>
+        <img src="img/gilberto.jpeg" alt="Gilberto Titericz " style="height:150px;">
+        <p>Gilberto is a data scientist on the RAPIDS team at NVIDIA and a Kaggle grandmaster. </p>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/giba1/recent-activity/all/">LinkedIn</a></li>
+        </ul>
+    </div>
+
+    <div id="jesus-pineda" class="section level2">
+        <h2>Jesús Pineda</h2>
+        <img src="img/Jesus-Pineda-7.png" alt="Jesús Pineda" style="height:150px;">
+        <p>Jesus Pineda is a researcher at the Department of Biology at the Woods Hole Oceanographic Institution (WHOI).
+            He leads the Benthic Ecology and Nearshore Oceanography Lab (BENOL), which focuses on nearshore and coastal
+            ecology,larval ecology, larval transport and dispersal, population ecology, and large-scale ecology.
+            His research explores the distribution and abundance of benthic organisms, investigating the environmental
+            factors that shape these patterns. His work spans temperate and tropical environments, contributing to a
+            deeper
+            understanding of coastal ecosystem dynamics and larval connectivity.</p>
+        <ul>
+            <li><a href="https://www.whoi.edu/oceanus/author/jes-uacute-s-pineda/">Website</a></li>
+            <li><a href="https://scholar.google.com/citations?user=mNrbO8MAAAAJ&hl=en">Google Scholar</a></li>
+            <li><a href="https://orcid.org/0000-0002-5362-8614">ORCID</a></li>
+            <li><a href="https://www.linkedin.com/in/jes%C3%BAs-pineda-71ab4949/">LinkedIn</a></li>
+        </ul>
+    </div>
+
+    <div id="joao-goncalves" class="section level2">
+        <h2>João Gonçalves</h2>
+        <img src="img/joao_goncalves.png" alt="João Gonçalves" style="height:150px;">
+        <p>João Gonçalves is a tech enthusiast with over a decade of hands-on experience in software engineering and IT
+            ops. A Linux power user, network tinkerer, and software craftsman, he loves nothing more than diving into
+            complex
+            systems and making them run smoother, faster, and smarter. Currently at AIR Centre, João is immersed in the
+            exciting world of high-performance computing (HPC), where he maintains a cutting-edge HPC datacenter,
+            develops
+            innovative software solutions and contributes to impactful projects.</p>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/joaomgon/">LinkedIn</a></li>
+        </ul>
+    </div>
+    <div id="joao-pinelo" class="section level2">
+        <h2>Joao Pinelo</h2>
+        <img src="img/joao_pinelo.jpg" alt="Joao pinelo" style="height:150px;">
+        <p>Dr. Joao Pinelo is Head of Data Science, Cloud Infrastructure, and Software Development at the
+            Atlantic International Research Centre. He has been part of the Earth Observation Lab at AIR Centre—an
+            ESA-associated laboratory—since 2020. His work focuses on the design, deployment, and operation of
+            large-scale digital infrastructure for Earth observation, including data centres, sensing networks,
+            and real-time processing platforms.
+            He is the founder and lead organizer of JuliaEO, the Global Workshop on Earth Observation with
+            Julia, with editions held annually since 2023. He led the setup of AIR Centre’s data centre,
+            defining and managing end-to-end system architectures for networking, storage, and computation, and
+            establishing it as a hybrid-cloud environment. He has also architected several mission-critical
+            systems, including the Azores IoT network, the Atlantic Cloud, and the Internal Waves Service, and
+            has overseen the development of multiple real-time web applications for EO data access and
+            early-warning services.
+        </p>
+        <ul>
+            <li><a href="https://github.com/jpinelo/">GitHub</a></li>
+            <li><a href="https://orcid.org/0000-0002-4890-0775">ORCID</a></li>
+            <li><a href="https://www.linkedin.com/in/joaopinelo/?originalSubdomain=pt">LinkedIn</a></li>
+        </ul>
+    </div>
+
+    <div id="johnny-johannessen" class="section level2">
+        <h2>Johnny Johannessen</h2>
+        <img src="img/JohnnyJohannessen.jpg" alt="Johnny Johannessen" style="height:150px;">
+        <p> Johnny A. Johannessen has 40 years of experience in satellite remote sensing in oceanography and sea
+            ice research. In particular, he has focused on the use of satellites to advance the understanding of
+            mesoscale processes and currents, upper ocean dynamics and air-sea-ice interaction associated with ocean
+            fronts and eddies, both in the open ocean and along the marginal ice zone. He has also been involved in
+            development and implementation of operational oceanography at national and international level. This has
+            included a central role in the transition from the Framework Program in EU to the operation of the
+            Copernicus Marine Environmental Monitoring Service (CMEMS). Johannessen has been a member of several ESA
+            mission
+            advisory groups. He chaired ESA´s Science Advisory Committee from 2006 to 2010 and ESA EOEP5/FutureEO
+            Segment-1 Science Review Panel (2021-2022). He is a member of the board of Mercator Ocean International and
+            the GCOS Steering Committee. </p>
+        <ul>
+            <li><a href="https://nersc.no/en/ansatt/johnny-a-johannessen/">Website</a></li>
+            <li><a href="https://scholar.google.no/citations?user=J6h7HoQAAAAJ&hl=en">Google Scholar</a></li>
+            <li><a href="https://orcid.org/0000-0001-7591-9714">ORCID</a></li>
+        </ul>
+    </div>
+    <div id="jorge-magalhaes" class="section level2">
+        <h2>Jorge Magalhães</h2>
+        <img src="img/jorge_magalhaes.jpeg" alt="Jorge Magalhães" style="height:150px;">
+        <p>Jorge Magalhães graduated in Oceanography in 2005 from the University of Lisbon and completed his Ph.D. in
+            internal waves in 2012 from the University of Porto.
+            Main research interests include satellite imaging of sea surface processes, including internal waves,
+            near-shore phenomena such as RIP currents, river plumes, and
+            thermal fronts. Recent research includes developing software for satellite SAR and altimetry processing,
+            global ocean modelling (e.g. HYCOM), as well as high resolution
+            numerical modelling (e.g. using the MITgcm) for accurate representations of internal wave dynamics and their
+            interactions with other processes.</p>
+        <ul>
+            <li><a href="https://jorgemrmagalhaes.wixsite.com/internal-waves-/contact">Website</a></li>
+            <li><a href="https://scholar.google.com/citations?user=hac9Y2gAAAAJ&hl=en&oi=sra">Google Scholar</a></li>
+            <li><a href="https://orcid.org/0000-0003-2685-6942">ORCID</a></li>
+            <li><a
+                    href="https://www.linkedin.com/in/jorge-m-magalhaes-8b9440109/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=pt">LinkedIn</a>
+            </li>
+        </ul>
+    </div>
+    <div id="jose-silva" class="section level2">
+        <h2>José da Silva</h2>
+        <img src="img/jose_da_silva.jpeg" alt="José da Silva" style="height:150px;">
+        <p>José C.B. da Silva has more than 30 years of experience in Satellite Oceanography and holds a Doctor of
+            Philosophy
+            in Oceanography (1997) at the University of Southampton (National Oceanography Centre, Southampton, U.K.).
+            José is interested in all kinds of Remote Sensing techniques to observe ocean internal waves and small-scale
+            phenomena in the upper ocean. His research work combines observations, numerical modelling and theoretical
+            grounds to
+            investigate the generation, propagation, interaction and dissipation of internal solitary waves. He holds a
+            first degree in
+            Physics/Applied Mathematics (Astrophysics) at the University of Porto, and a M.Sc. in Remote Sensing, Image
+            Processing and
+            Applications, at the University of Dundee, Scotland. He was Lecturer at the University of Lisbon (Physics
+            Department) and
+            is Associate Professor at University of Porto (Departamento de Geociências, Ambiente e Ordenamento do
+            Território) since
+            2010. José is also a guest investigator at the Woods Hole Oceanographic Institution since 2007. José da
+            Silva has been
+            Principal Investigator and participated in many national and international projects. José was a PI for the
+            ERS SAR and ENVISAT
+            missions as well as TerraSAR-X missions. He has supervised 5 post-docs and 6 PhD students and has published
+            more than 60 peer
+            reviewed ISI indexed journal articles, many book chapters and many other ISI indexed publications. His
+            research has significantly
+            shaped the study of internal waves through the use of remote sensing techniques.</p>
+        <ul>
+            <li><a href="https://jorgemrmagalhaes.wixsite.com/internal-waves-/contact">Website</a></li>
+            <li><a href="https://scholar.google.com/citations?user=g9EGshwAAAAJ&hl=en&oi=sra">Google Scholar</a></li>
+            <li><a href="https://orcid.org/0000-0002-5453-3916">ORCID</a></li>
+        </ul>
+    </div>
+
+    <div id="maarten-buijsman " class="section level2">
+        <h2>Maarten Buijsman </h2>
+        <img src="img/maarten-buijsman.jpg" alt="Maarten Buijsman " style="height:150px;">
+        <p>Associate Professor Maarten Buijsman, of The University of Southern Mississippi’s Division of Marine Science,
+            is part of a large team
+            that is funded by the National Oceanographic Partnership Program that studies the characteristics of
+            subsurface waves that have
+            propagated along the density layers across the Pacific Ocean to the U.S. West Coast. These internal waves,
+            generated near Hawaii due
+            to tidal motions over topography, may be relevant for water mass mixing in coastal shelf areas, affecting
+            the coastal circulation and
+            biogeochemistry.</p>
+        <ul>
+            <li><a
+                    href="https://www.usm.edu/ocean-science-engineering/research-spotlight-maarten-buijsman.php">Website</a>
+            </li>
+            <li><a href="https://scholar.google.com/citations?user=zNoCchgAAAAJ&hl=en">Google Scholar</a></li>
+            <li><a href="https://orcid.org/0000-0001-8478-5957">ORCID</a></li>
+            <li><a href="https://www.linkedin.com/in/maarten-buijsman-16444232/">LinkedIn</a></li>
+        </ul>
+
+        <summary>
+
+        </summary>
+        <p>
+
+        <div id="expected-outcomes" class="section level2">
+            <ul>
+                <li><strong>Scientific &amp; Technical Alignment</strong>
+                    <ul>
+                        <li>Consolidate a shared understanding of the state of the art in the global detection and
+                            characterisation of Internal Solitary Waves (ISWs) using Earth-Observation data.</li>
+                        <li>Discuss best practices, limitations, and uncertainties associated with Sentinel-1 SAR (Wave
+                            Mode and IW mode), as well as complementary sensors (e.g. SWOT, in-situ observations).</li>
+                        <li>Align on scientific validation strategies and quality criteria for IWS products.</li>
+                    </ul>
+                </li>
+                <li><strong>Service Development &amp; Operational Roadmap</strong>
+                    <ul>
+                        <li>Refine the roadmap of the Internal Waves Service (IWS), from the current prototype towards a
+                            more operational and sustainable service.</li>
+                        <li>Identify key requirements for near-real-time access, cloud-based processing, and service
+                            scalability.</li>
+                        <li>Define technical priorities for future developments and sensor integrations.</li>
+                    </ul>
+                </li>
+                <li><strong>Data, Methods &amp; Validation Framework</strong>
+                    <ul>
+                        <li>Review current approaches for the detection and mapping of internal waves, with emphasis on
+                            robustness, interpretability, and consistency across regions.</li>
+                        <li>Discuss strategies for dataset curation, expert validation, and quality control to support
+                            long-term service reliability.</li>
+                        <li>Promote common methodological principles that enable intercomparison, traceability, and
+                            reproducibility of IWS products.</li>
+                    </ul>
+                </li>
+                <li><strong>Community Building &amp; Collaboration</strong>
+                    <ul>
+                        <li>Strengthen the international community of internal-wave experts, fostering interaction
+                            across disciplines and sectors.</li>
+                        <li>Stimulate new scientific and technical collaborations, including joint activities, shared
+                            resources, and coordinated initiatives.</li>
+                        <li>Identify synergies with existing European and international networks in Earth Observation
+                            and physical oceanography.</li>
+                    </ul>
+                </li>
+                <li><strong>User Engagement &amp; Applications</strong>
+                    <ul>
+                        <li>Discuss concrete use cases of the IWS, such as maritime safety, offshore operations, ocean
+                            engineering, and ocean modelling.</li>
+                        <li>Gather feedback from potential users to guide service evolution and prioritisation.</li>
+                        <li>Clarify the added value of the IWS for different user communities, including science,
+                            agencies, and industry.</li>
+                    </ul>
+                </li>
+                <li><strong>Strategic &amp; Future Actions</strong>
+                    <ul>
+                        <li>Define concrete post-workshop actions, including working groups, technical milestones, and
+                            follow-up activities.</li>
+                        <li>Prepare the ground for future funding opportunities and integration of the IWS into broader
+                            EO and ocean services.</li>
+                        <li>Produce an IWS-W26 summary report with scientific, technical, and strategic recommendations.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </p>
+</details>
+<details close>
+    <summary>
+        FAQ
+    </summary>
+    <p>
+        </div>
+    <div id="faq" class="section level2">
+        <ol style="list-style-type: decimal">
+            <li>Is there a fee to attend the workshop? <em>No.</em></li>
+            <li>Do I need to register to attend the workshop?<br />
+                <em> No, this is an invitation-only event. If you (or your institution) received an invitation, please
+                    email
+                    <a href="mailto:adriana.ferreira@aircentre.org" class="email">adriana.ferreira@aircentre.org</a>
+                    to confirm your attendance.
+                    If you have not received an invitation but are interested in participating, please send a brief
+                    statement
+                    of interest to the same email address for consideration.
+                </em><br />
+            </li>
+            <li>Does the AIR Centre provide transfers between the airport and the hotel?
+                <em>Yes, for the speakers, but only in Lisbon.</em>
+            </li>
+        </ol>
+        </p>
+</details>
+<details close>
+    <summary>
+        Location
+    </summary>
+    <p>
+        </div>
+    <div id="location" class="section level2">
+
+        <p>Invited speakers will also be accommodated at the same hotel as the event (TBD).</p>
+        <p>Other participants who wish to stay at the hotel shall mention the event to get special pricing.</p>
+        </p>
+
+</details>
+<details close>
+    <summary>
+        Organizing Committee
+    </summary>
+    <p>
+        </div>
+    <div id="organizing-committee" class="section level2">
+        <ul>
+            <li>
+                <p>João Pinelo (AIR Centre), Adriana Ferreira (AIR Centre), José da Silva (University of Porto),
+                    Bertrand Chapron (IFREMER) and Johnny A. Johannessen (NERSC)</p>
+            </li>
+</details>
+
+</ul>
+<br>
+<br>
+<details open>
+    <summary>
+        Sponsors
+    </summary>
+    <div id="sponsors" class="section level2">
+        <br>
+        <div class="row">
+            <div class="column">
+                <img src="img/logo-ac.png" alt="logo" class="topbar-logo">
+            </div>
+            <div class="column">
+                <img src="img/FLAD-EN-Black-logo-2025.svg" alt="logo" class="topbar-logo">
+            </div>
+            <div class="column">
+                <img src="img/logo-cmah.png" alt="logo" class="topbar-logo">
+            </div>
+        </div>
+    </div>
+</details>
+<br>
+<br>
+<br>
+<details open>
+    <summary>
+        Partners
+    </summary>
+    <div id="event" class="section level2">
+        <br>
+        <div class="row">
+            <!-- Primeira linha -->
+            <div class="column" style="height:150px;">
+                <img src="img/Logo-Ifremer.png" alt="logo" class="center topbar-logo">
+            </div>
+            <div class="column" style="height:80px;">
+                <img src="img/fcup-2022-23-logo-fcup.png" alt="logo" class="center topbar-logo">
+            </div>
+            <div class="column" style="height:150px;">
+                <img src="img/noc-colour.png" alt="logo" class="center topbar-logo">
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Segunda linha -->
+            <div class="column" style="height:100px;">
+                <img src="img/NERSC_LOGO.png" alt="logo" class="center topbar-logo">
+            </div>
+            <div class="column" style="height:100px;">
+                <img src="img/mississipi.png" alt="logo" class="center topbar-logo">
+            </div>
+            <div class="column" style="height:100px;">
+                <img src="img/ciimar.png" alt="logo" class="center topbar-logo">
+            </div>
+        </div>
+
+        <div class="row" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <!-- Terceira linha -->
+            <div class="column" style="height:150px;">
+                <img src="img/peches-et-oceans-canada.png" alt="logo" class="center topbar-logo">
+            </div>
+            <div class="column" style="height:150px;">
+                <img src="img/Logo_ESA.png" alt="logo" class="center topbar-logo">
+            </div>
+            <div class="column" style="height:150px;">
+                <img src="img/WHOI-logo.png" alt="logo" class="center topbar-logo">
+            </div>
+        </div>
+
+        <div class="row" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <!-- Quarta linha -->
+            <div class="column" style="height:150px;">
+                <img src="img/NASA_Jet_Propulsion_Laboratory.png" alt="logo" class="center topbar-logo">
+            </div>
+            <div class="column" style="height:150px;">
+                <img src="img/University-of-Waterloo.png" alt="logo" class="center topbar-logo">
+            </div>
+            <div class="column" style="height:150px;">
+                <img src="img/MIT-Logo.png" alt="logo" class="center topbar-logo">
+            </div>
+            <div class="column" style="height:150px;">
+                <img src="img/Nvidia_logo.png" alt="logo" class="center topbar-logo">
+            </div>
+            <div class="column" style="height:150px;">
+                <img src="img/University_of_Washington.png" alt="logo" class="center topbar-logo">
+            </div>
+
+        </div>
+
+</details>
+</body>
+
+</html>
