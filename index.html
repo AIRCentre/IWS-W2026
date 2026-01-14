@@ -117,41 +117,24 @@
     <p>
         </div>
     <div id="About Internal Waves Service" class="section level2">
-        <p>This service sources all Copernicus Sentinel 1 WV mode vignettes SAR (Synthetic Aperture RADAR) images
-            (imagettes) and classifies them according to wether or not they depict an internal wave. It proceeds to
-            store the positive images on S3 and their metadata on SQL a database for efficient retrieval.</p>
-        <ul>
-            <li>Data Acquisition and Processing:</li>
-            </p>
-            The system continuously ingests Sentinel-1 WV mode vignettes from global acquisitions. The images were
-            sourced from <a href="https://xwaves.ifremer.fr/#/">IFREMER X-Waves</a>.</p>
-            <li>Machine Learning Classification:</li>
-            </p>
-            Employs a state-of-the-art machine learning model to classify each vignette, determining the presence or
-            absence of internal waves. The model is trained on a diverse dataset of imagettes of different oceans
-            featuring
-            various oceanic conditions.</p>
-            <li>Data Management:</li>
-            </p>
-            Positive detections: Vignettes classified as containing internal waves are stored in S3 object storage for
-            efficient retrieval and further analysis.
-            Comprehensive metadata for all processed vignettes, including classification results, acquisition details,
-            and geolocation information, is stored in a SQL database.</p>
-            <li>Key Features:</li>
-            </p>
-            The system provides global coverage by analyzing Sentinel-1 WV mode data from all ocean basins worldwide. It
-            supports near real-time processing by rapidly ingesting and
-            processing new acquisitions to maintain an up-to-date dataset. Efficient retrieval is ensured through an
-            optimized database schema and object storage integration, enabling
-            quick access to classified imagery and associated metadata. Designed for scalability, the system handles the
-            high volume of Sentinel-1 WV mode acquisitions, which can reach
-            up to 75 minutes per orbit, with the potential to incorporate data from other satellites in the future.</p>
-            </p>This service provides researchers and oceanographers with a powerful tool for studying internal wave
-            phenomena on a global scale, leveraging the unique capabilities of
-            Sentinel-1’s Wave mode acquisitions.</p>
-        </ul>
+        <p>The Internal Waves Service (IWS) is an international scientific initiative dedicated to the global detection,
+            monitoring, and analysis of oceanic internal waves. The service is currently based on Synthetic Aperture
+            Radar (SAR) Wave Mode (WV) observations, enabling systematic, global-scale monitoring of internal wave
+            signatures from satellite data.</p>
 
-        </p>
+        <p>IWS aims to bridge the gap between fundamental research and operational services by developing a consistent
+            and reproducible framework for the identification and characterisation of internal waves in SAR WV imagery.
+            Through the combination of expert-driven methodologies and emerging machine-learning approaches, the service
+            seeks to transform large volumes of WV data into scientifically robust information products that can support
+            both research activities and future operational applications.</p>
+
+        <p>Since its inception, the Internal Waves Service has evolved into a growing international network of research
+            institutions and universities, fostering open science, collaboration, and capacity building. Through
+            dedicated workshops, shared datasets, and joint developments, IWS aims to establish a long-term,
+            community-driven service that advances the understanding of internal waves and strengthens their integration
+            into global ocean-observing efforts.</p>
+    </div>
+
 </details>
 <details close>
     <summary>
@@ -242,7 +225,7 @@
             <p><b>14:00 – 14:30</b> Reflections on the day.
                 <em> Mr. </em>
             </p>
-                <hr />
+            <hr />
         </div>
 
         <div id="day-3-16.04.2026" class="section level3">
@@ -257,14 +240,94 @@
             <hr />
         </div>
 
-</details>
-<details close>
-    <summary>
-        Speakers
-    </summary>
-    <p>
-        </div>
-        </div>
+
+        <details close>
+            <summary>
+                Expected Outcomes
+            </summary>
+            <p>
+            <div id="expected-outcomes" class="section level2">
+                <ul>
+                    <li><strong>Scientific &amp; Technical Alignment</strong>
+                        <ul>
+                            <li>Consolidate a shared understanding of the state of the art in the global detection and
+                                characterisation of Internal Solitary Waves (ISWs) using Earth-Observation data.</li>
+                            <li>Discuss best practices, limitations, and uncertainties associated with Sentinel-1 SAR
+                                (Wave
+                                Mode and IW mode), as well as complementary sensors (e.g. SWOT, in-situ observations).
+                            </li>
+                            <li>Align on scientific validation strategies and quality criteria for IWS products.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Service Development &amp; Operational Roadmap</strong>
+                        <ul>
+                            <li>Refine the roadmap of the Internal Waves Service (IWS), from the current prototype
+                                towards a
+                                more operational and sustainable service.</li>
+                            <li>Identify key requirements for near-real-time access, cloud-based processing, and service
+                                scalability.</li>
+                            <li>Define technical priorities for future developments and sensor integrations.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Data, Methods &amp; Validation Framework</strong>
+                        <ul>
+                            <li>Review current approaches for the detection and mapping of internal waves, with emphasis
+                                on
+                                robustness, interpretability, and consistency across regions.</li>
+                            <li>Discuss strategies for dataset curation, expert validation, and quality control to
+                                support
+                                long-term service reliability.</li>
+                            <li>Promote common methodological principles that enable intercomparison, traceability, and
+                                reproducibility of IWS products.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Community Building &amp; Collaboration</strong>
+                        <ul>
+                            <li>Strengthen the international community of internal-wave experts, fostering interaction
+                                across disciplines and sectors.</li>
+                            <li>Stimulate new scientific and technical collaborations, including joint activities,
+                                shared
+                                resources, and coordinated initiatives.</li>
+                            <li>Identify synergies with existing European and international networks in Earth
+                                Observation
+                                and physical oceanography.</li>
+                        </ul>
+                    </li>
+                    <li><strong>User Engagement &amp; Applications</strong>
+                        <ul>
+                            <li>Discuss concrete use cases of the IWS, such as maritime safety, offshore operations,
+                                ocean
+                                engineering, and ocean modelling.</li>
+                            <li>Gather feedback from potential users to guide service evolution and prioritisation.</li>
+                            <li>Clarify the added value of the IWS for different user communities, including science,
+                                agencies, and industry.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Strategic &amp; Future Actions</strong>
+                        <ul>
+                            <li>Define concrete post-workshop actions, including working groups, technical milestones,
+                                and
+                                follow-up activities.</li>
+                            <li>Prepare the ground for future funding opportunities and integration of the IWS into
+                                broader
+                                EO and ocean services.</li>
+                            <li>Produce an IWS-W26 summary report with scientific, technical, and strategic
+                                recommendations.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+
+        <details close>
+            <summary>
+                Speakers
+            </summary>
+            <p>
+    </div>
+    </div>
     <div id="speakers-bio" class="section level2">
         <p>A limited number of expert scientists and key stakeholders have been invited to participate in the Internal
             Waves
@@ -296,6 +359,25 @@
             <li><a href="https://orcid.org/0000-0002-5704-6021">ORCID</a></li>
         </ul>
     </div>
+
+    <div id="benjamin-holt" class="section level2">
+        <h2>Benjamin Holt</h2>
+        <img src="img/ben_holt.jpg" alt="Benjamin Holt" style="height:150px;">
+        <p>Benjamin Holt is a scientist at the NASA Jet Propulsion Laboratory, with long-standing expertise in ocean
+            remote sensing, particularly using Synthetic Aperture Radar (SAR) observations.
+            He is internationally recognised for his pioneering contributions to the detection and interpretation of
+            internal waves, ocean fronts, and surface current signatures in SAR imagery. His work has played a key role
+            in establishing SAR-based methodologies for observing internal waves from space and remains highly
+            influential within the oceanographic and Earth-observation communities.
+            Throughout his career, he has contributed to numerous NASA missions and international research efforts,
+            supporting both scientific understanding and the development of satellite-based ocean services.
+        </p>
+        <ul>
+            <li><a href="https://science.jpl.nasa.gov/people/benholt/">Website</a></li>
+            <li><a href="https://orcid.org/0000-0003-4065-3076">ORCID</a></li>
+        </ul>
+    </div>
+    <!--
     <div id="bertrand-chapron" class="section level2">
         <h2>Bertrand Chapron</h2>
         <img src="img/Bertrand_chapron.jpg" alt="Bertrand Chapron" style="height:150px;">
@@ -358,28 +440,8 @@
             <li><a href="https://scholar.google.co.uk/citations?user=aMTOUXEAAAAJ&hl=en">Google Scholar</a></li>
         </ul>
     </div>
-    </div>
-    <div id="Edwin-Goh" class="section level2">
-        <h2>Edwin Goh</h2>
-        <img src="img/Edwin_goh.jpeg" alt="Edwin Goh" style="height:150px;">
-        <p>Edwin Goh received the B.S., M.S., and Ph.D. degrees in aerospace engineering from Georgia Institute of
-            Technology, Atlanta,
-            GA, USA, in 2015, 2018, and 2020, respectively. He is currently a Data Scientist with the Jet Propulsion
-            Laboratory, California
-            Institute of Technology, Pasadena, CA, USA. His research focuses on the application of machine learning to
-            enable data-driven
-            design, optimization, and operation of aerospace systems. His work includes deep space network (DSN)
-            scheduling using reinforcement
-            learning, automated machine learning systems, and self-supervised computer vision for planetary and Earth
-            science. </p>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/edwin217/">LinkedIn</a></li>
-            <li><a href="https://ieeexplore.ieee.org/author/37085576296">Website</a></li>
-            <li><a href="https://orcid.org/0000-0002-8445-9358">ORCID</a></li>
-            <li><a href="https://scholar.google.com/citations?user=3mER6wkAAAAJ&hl=en">Google Scholar</a></li>
-        </ul>
+-->
 
-    </div>
     <div id="Gael-Forget" class="section level2">
         <h2>Gaël Forget</h2>
         <img src="img/Gael_Forget.jpg" alt="Gaël Forget" style="height:150px;">
@@ -400,14 +462,6 @@
         <ul>
             <li><a href="https://www.gaelforget.net/">Website</a></li>
             <li><a href="https://scholar.google.com/citations?user=QIWIDPMAAAAJ&hl=en">Google Scholar</a></li>
-        </ul>
-    </div>
-    <div id="gilberto-titericz " class="section level2">
-        <h2>Gilberto Titericz</h2>
-        <img src="img/gilberto.jpeg" alt="Gilberto Titericz " style="height:150px;">
-        <p>Gilberto is a data scientist on the RAPIDS team at NVIDIA and a Kaggle grandmaster. </p>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/giba1/recent-activity/all/">LinkedIn</a></li>
         </ul>
     </div>
 
@@ -443,6 +497,7 @@
             <li><a href="https://www.linkedin.com/in/joaomgon/">LinkedIn</a></li>
         </ul>
     </div>
+
     <div id="joao-pinelo" class="section level2">
         <h2>Joao Pinelo</h2>
         <img src="img/joao_pinelo.jpg" alt="Joao pinelo" style="height:150px;">
@@ -539,100 +594,68 @@
         </ul>
     </div>
 
-    <div id="maarten-buijsman " class="section level2">
-        <h2>Maarten Buijsman </h2>
-        <img src="img/maarten-buijsman.jpg" alt="Maarten Buijsman " style="height:150px;">
-        <p>Associate Professor Maarten Buijsman, of The University of Southern Mississippi’s Division of Marine Science,
-            is part of a large team
-            that is funded by the National Oceanographic Partnership Program that studies the characteristics of
-            subsurface waves that have
-            propagated along the density layers across the Pacific Ocean to the U.S. West Coast. These internal waves,
-            generated near Hawaii due
-            to tidal motions over topography, may be relevant for water mass mixing in coastal shelf areas, affecting
-            the coastal circulation and
-            biogeochemistry.</p>
+    <div id="kateryna-terletska" class="section level2">
+        <h2>Kateryna Terletska</h2>
+        <img src="img/kateryna_terletska.jpeg" alt="Kateryna Terletska" style="height:150px;">
+        <p>Kateryna Terletska is a Doctor of Physical and Mathematical Sciences and Senior Researcher at the Institute
+            of Mathematical Machines and Systems of the National Academy of Sciences of Ukraine. She specializes in
+            applied mathematics and hydromechanics, focusing on modeling internal waves, their nonlinear interactions,
+            and their impact on ocean dynamics and ice–ocean processes. She is also Head of the Applied Mathematics
+            Laboratory at the Junior Academy of Sciences of Ukraine, where she leads projects connecting mathematical
+            modeling with education and science communication.</p>
         <ul>
-            <li><a
-                    href="https://www.usm.edu/ocean-science-engineering/research-spotlight-maarten-buijsman.php">Website</a>
-            </li>
-            <li><a href="https://scholar.google.com/citations?user=zNoCchgAAAAJ&hl=en">Google Scholar</a></li>
-            <li><a href="https://orcid.org/0000-0001-8478-5957">ORCID</a></li>
-            <li><a href="https://www.linkedin.com/in/maarten-buijsman-16444232/">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=AdeccbYAAAAJ&hl=en">Google Scholar</a></li>
+            <li><a href="https://orcid.org/0000-0002-9928-7042">ORCID</a></li>
+            <li><a href="https://www.linkedin.com/in/kateryna-terletska-45b93584/">LinkedIn</a></li>
         </ul>
+        <div id="maarten-buijsman " class="section level2">
+            <h2>Maarten Buijsman </h2>
+            <img src="img/maarten-buijsman.jpg" alt="Maarten Buijsman " style="height:150px;">
+            <p>Associate Professor Maarten Buijsman, of The University of Southern Mississippi’s Division of Marine
+                Science,
+                is part of a large team
+                that is funded by the National Oceanographic Partnership Program that studies the characteristics of
+                subsurface waves that have
+                propagated along the density layers across the Pacific Ocean to the U.S. West Coast. These internal
+                waves,
+                generated near Hawaii due
+                to tidal motions over topography, may be relevant for water mass mixing in coastal shelf areas,
+                affecting
+                the coastal circulation and
+                biogeochemistry.</p>
+            <ul>
+                <li><a
+                        href="https://www.usm.edu/ocean-science-engineering/research-spotlight-maarten-buijsman.php">Website</a>
+                </li>
+                <li><a href="https://scholar.google.com/citations?user=zNoCchgAAAAJ&hl=en">Google Scholar</a></li>
+                <li><a href="https://orcid.org/0000-0001-8478-5957">ORCID</a></li>
+                <li><a href="https://www.linkedin.com/in/maarten-buijsman-16444232/">LinkedIn</a></li>
+            </ul>
+        </div>
+        <div id="paulo-oliveira" class="section level2">
+            <h2>Paulo Oliveira</h2>
+            <img src="img/paulo_oliveira.jpeg" alt="Paulo Oliveira" style="height:150px;">
+            <p>
+
+            </p>
+            <ul>
+                <li><a href="https://scholar.google.pt/citations?user=ze7vB6cAAAAJ&hl=pt-PT">Google Scholar</a></li>
+            </ul>
+        </div>
+
 
         <summary>
 
         </summary>
         <p>
 
-        <div id="expected-outcomes" class="section level2">
-            <ul>
-                <li><strong>Scientific &amp; Technical Alignment</strong>
-                    <ul>
-                        <li>Consolidate a shared understanding of the state of the art in the global detection and
-                            characterisation of Internal Solitary Waves (ISWs) using Earth-Observation data.</li>
-                        <li>Discuss best practices, limitations, and uncertainties associated with Sentinel-1 SAR (Wave
-                            Mode and IW mode), as well as complementary sensors (e.g. SWOT, in-situ observations).</li>
-                        <li>Align on scientific validation strategies and quality criteria for IWS products.</li>
-                    </ul>
-                </li>
-                <li><strong>Service Development &amp; Operational Roadmap</strong>
-                    <ul>
-                        <li>Refine the roadmap of the Internal Waves Service (IWS), from the current prototype towards a
-                            more operational and sustainable service.</li>
-                        <li>Identify key requirements for near-real-time access, cloud-based processing, and service
-                            scalability.</li>
-                        <li>Define technical priorities for future developments and sensor integrations.</li>
-                    </ul>
-                </li>
-                <li><strong>Data, Methods &amp; Validation Framework</strong>
-                    <ul>
-                        <li>Review current approaches for the detection and mapping of internal waves, with emphasis on
-                            robustness, interpretability, and consistency across regions.</li>
-                        <li>Discuss strategies for dataset curation, expert validation, and quality control to support
-                            long-term service reliability.</li>
-                        <li>Promote common methodological principles that enable intercomparison, traceability, and
-                            reproducibility of IWS products.</li>
-                    </ul>
-                </li>
-                <li><strong>Community Building &amp; Collaboration</strong>
-                    <ul>
-                        <li>Strengthen the international community of internal-wave experts, fostering interaction
-                            across disciplines and sectors.</li>
-                        <li>Stimulate new scientific and technical collaborations, including joint activities, shared
-                            resources, and coordinated initiatives.</li>
-                        <li>Identify synergies with existing European and international networks in Earth Observation
-                            and physical oceanography.</li>
-                    </ul>
-                </li>
-                <li><strong>User Engagement &amp; Applications</strong>
-                    <ul>
-                        <li>Discuss concrete use cases of the IWS, such as maritime safety, offshore operations, ocean
-                            engineering, and ocean modelling.</li>
-                        <li>Gather feedback from potential users to guide service evolution and prioritisation.</li>
-                        <li>Clarify the added value of the IWS for different user communities, including science,
-                            agencies, and industry.</li>
-                    </ul>
-                </li>
-                <li><strong>Strategic &amp; Future Actions</strong>
-                    <ul>
-                        <li>Define concrete post-workshop actions, including working groups, technical milestones, and
-                            follow-up activities.</li>
-                        <li>Prepare the ground for future funding opportunities and integration of the IWS into broader
-                            EO and ocean services.</li>
-                        <li>Produce an IWS-W26 summary report with scientific, technical, and strategic recommendations.
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            </p>
-</details>
-<details close>
-    <summary>
-        FAQ
-    </summary>
-    <p>
-        </div>
+
+        <details close>
+            <summary>
+                FAQ
+            </summary>
+            <p>
+    </div>
     <div id="faq" class="section level2">
         <ol style="list-style-type: decimal">
             <li>Is there a fee to attend the workshop? <em>No.</em></li>
